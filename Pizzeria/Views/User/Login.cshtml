@@ -1,0 +1,23 @@
+﻿@model Pizzeria.Models.Kund
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-controller="User" asp-action="Login" method="post">
+
+                <div class="form-group">
+                    <label asp-for="AnvandarNamn">Användarnamn:</label>
+                    <input type="text" asp-for="AnvandarNamn" class="form-control-sm" />
+                    <span asp-validation-for="AnvandarNamn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Losenord">Lösenord:</label>
+                    <input type="password" asp-for="Losenord" class="form-control-sm" />
+                    <span asp-validation-for="Losenord" class="text-danger"></span>
+                </div>
+                <br /><br />
+
+                <input type="submit" value="Logga in" class="btn btn-info align-self-lg-end float-sm-none" />
+            </form>
+            </div>
+        </div>

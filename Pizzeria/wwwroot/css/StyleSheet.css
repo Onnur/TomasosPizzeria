@@ -1,0 +1,137 @@
+﻿* {
+    box-sizing: padding-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: bisque;
+    margin: 0;
+    /*background: url("/images/pizza-bg.jpg") repeat top;*/
+}
+
+article, header {
+    margin: 1em auto;
+    border-radius: 1em;
+    width: 90%;
+    max-width: 42em;
+}
+
+article, header {
+    padding: 1em;
+    background-color: white;
+    border-bottom: 2px solid gray;
+}
+
+section, fieldset {
+    border: 1px solid lightgray;
+    border-bottom: 4px solid lightgray;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+header {
+    text-align: center;
+}
+
+    header > h1 {
+        border-bottom: 3px solid lightgray;
+        margin: 0;
+    }
+
+    header > h2 {
+        color: gray;
+        margin: 0;
+    }
+
+.big {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+.navbar .divider-vertical {
+    width: 0;
+    margin: 0 0.5rem;
+    overflow: hidden;
+    border-left: 1px solid #e9ecef;
+}
+
+.navbar.navbar-dark .divider-vertical {
+    border-left: 1px solid #666;
+}
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+

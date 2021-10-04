@@ -1,0 +1,20 @@
+﻿@using Newtonsoft.Json
+@using Pizzeria.Models
+@model List<Pizzeria.Models.Matratt>
+
+@if (Context.Request.Cookies["Cart"] != null)
+{
+    var temp = Context.Request.Cookies["Cart"];
+    var existingMatch = JsonConvert.DeserializeObject<List<Matratt>>(temp);
+    <h5>Du har beställt:</h5>
+    foreach (var item in existingMatch)
+     {
+         <p>@item.MatrattNamn</p>
+     }
+    @*<p>Ditt totalbelopp är: @existingMatch kr</p>*@
+    <a asp-controller="Order" asp-action="Checkout">Beställ</a>
+}
+else
+{
+    <h3>Din kundvagn är tom.</h3>
+}

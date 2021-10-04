@@ -1,0 +1,61 @@
+﻿@*@model Pizzeria.Models.Kund*@
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json
+@using Pizzeria.Models
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewData["Title"]Tomasos Hemsida</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    @*<link asp-href-include="css/*.css" rel="stylesheet" />*@
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row p-3 mb-2 bg-warning text-dark">
+            <div class="col-sm-4">
+                <a asp-controller="Home" asp-action="Index"><h2>Tomasos Pizzeria</h2></a>
+            </div>
+            <div class="col-sm-4">
+                <a asp-controller="Home" asp-action="Menu" class="text-primary">Meny</a>
+                <a asp-controller="Order" asp-action="Cart">Kundvagn</a>
+            </div>
+            <div class="col-sm-4">
+                @if (Context.Request.Cookies["LoggedIn"] == null)
+                {
+    <a asp-controller="User" asp-action="Login" class="text-primary">Logga in</a>
+                    <a asp-controller="User" asp-action="RegisterCustomer" class="text-primary">Registrera</a>}
+
+                @if (Context.Request.Cookies["LoggedIn"] != null)
+                {
+                    var temp = Context.Request.Cookies["LoggedIn"];
+                    var existingMatch = JsonConvert.DeserializeObject<Kund>(temp);
+    <a asp-controller="User" asp-action="UserInfo">Inloggad som: @existingMatch.AnvandarNamn</a>}
+            </div>
+        </div>
+
+        @RenderBody()
+    </div>
+
+    <footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2021 - Tomasos by OnurK
+    </div>
+    </footer>
+
+    @*Bootstrap Stuff*@
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

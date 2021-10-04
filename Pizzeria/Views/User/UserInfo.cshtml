@@ -1,0 +1,12 @@
+﻿@model Pizzeria.Models.Kund
+
+<p>Användarnamn: @Model.AnvandarNamn</p>
+<p>Namn: @Model.Namn</p>
+<p>Email: @Model.Email</p>
+<p>Gatuadress: @Model.Gatuadress</p>
+<p>Postort: @Model.Postort</p>
+<p>PostNummer: @Model.Postnr</p>
+<p>Telefonnummer: @Model.Telefon</p>
+<p>Lösenord: @Model.Losenord</p>
+
+<a asp-controller="User" asp-action="EditUserInfo"> Ändra information</a>

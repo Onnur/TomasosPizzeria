@@ -1,0 +1,22 @@
+﻿@model List<Pizzeria.Models.Matratt>
+<title>@ViewData["Title"]Tomasos Meny</title>
+    <h1>Alla maträtter</h1>
+    @foreach (var item in @Model)
+    {
+
+        if (@item.MatrattTyp >= 1 && item.MatrattTyp <=3)
+        {
+            <h3>@item.MatrattNamn</h3>
+            @*<h5>Ingredienser:</h5>*@
+            <p>Ingredienser: @item.Beskrivning</p>
+            <p>Pris: @item.Pris kr</p>
+            <a asp-controller="Order" asp-action="AddProduct" asp-route-id=@item.MatrattId>Lägg till i kundvagn</a>
+            <br />
+            <br />
+            @*foreach (var product in item.MatrattProdukt)
+            {
+                <p>@product.Produkt.ProduktNamn</p>
+            }*@
+
+        }
+    }

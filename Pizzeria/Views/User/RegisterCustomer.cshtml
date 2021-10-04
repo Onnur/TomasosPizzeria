@@ -1,0 +1,61 @@
+﻿@model Pizzeria.Models.Kund
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="User" asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AnvandarNamn">Användarnamn:</label>
+                <input asp-for="AnvandarNamn">
+                <span asp-validation-for="AnvandarNamn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">E-mail:</label>
+                <input asp-for="Email" type="email" />
+                @*<span asp-validation-for="Email" class="text-danger"></span>*@
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gatuadress">Gatuadress:</label>
+                <input asp-for="Gatuadress">
+                <span asp-validation-for="Gatuadress" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Namn">Förnamn:</label>
+                <input asp-for="Namn" />
+                <span asp-validation-for="Namn" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Postnr">Postnummer:</label>
+                <input asp-for="Postnr" />
+                <span asp-validation-for="Postnr" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Postort">Postort:</label>
+                <input asp-for="Postort" />
+                <span asp-validation-for="Postort" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Telefon">Telefon:</label>
+                <input asp-for="Telefon" />
+                @*<span asp-validation-for="Telefon" class="text-danger"></span>*@
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Losenord">Lösenord:</label>
+                <input asp-for="Losenord" />
+                <span asp-validation-for="Losenord" class="text-danger"></span>
+                <br /><br />
+            </div>
+            <div class="col-sm-4">
+                <input type="submit" value="Registrera" class="btn btn-info align-self-lg-end float-sm-none" />
+            </div>
+        </form>
+    </div>
+</div>
+
